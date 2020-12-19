@@ -6,8 +6,14 @@ with open('data.json') as file:
 
 def getDefinations(key):
     l_key = key.lower()
+    t_key = key.title()
+    u_key = key.upper()
     if key in data:
         return data[key]
+    if t_key in data:
+        return data[t_key]
+    if u_key in data:
+        return data[u_key]
     if l_key in data:
         return data[l_key]
 
