@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Application 3 | Personal Website" />
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}" />
+
+        <title>Application 3</title>
+    </head>
+    <body>
+        <header>
+            <nav class="container">
+                <h1 className="logo">Personal Website</h1>
+                <ul class="menu">
+                    <li>
+                        <a href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('about') }}">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="container">{%block content%} {%endblock%}</main>
+    </body>
+</html>
