@@ -20,8 +20,9 @@ def update_entries():
 def set_selected_item(event):
     index = lb_books.curselection()
     global selected_item
-    selected_item = lb_books.get(index[0])
-    update_entries()
+    if len(index) > 0:
+        selected_item = lb_books.get(index[0])
+        update_entries()
 
 def clearList():
     lb_books.delete(0, END)
@@ -117,10 +118,10 @@ btn_search.grid(row=3, column=6, columnspan=2)
 btn_add = Button(window, text="Add entry", width=12, command=command_add)
 btn_add.grid(row=4, column=6, columnspan=2)
 
-btn_update = Button(window, text="Update selected", width=12, command=command_update)
+btn_update = Button(window, text="Update", width=12, command=command_update)
 btn_update.grid(row=5, column=6, columnspan=2)
 
-btn_delete = Button(window, text="Delete selected", width=12, command=command_delete)
+btn_delete = Button(window, text="Delete", width=12, command=command_delete)
 btn_delete.grid(row=6, column=6, columnspan=2)
 
 btn_close = Button(window, text="Close", width=12, command=command_close)
