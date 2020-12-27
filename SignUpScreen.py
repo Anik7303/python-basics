@@ -26,5 +26,8 @@ class SignUpScreen(Screen):
             print(users)
             with open('users.json', 'w') as file:
                 file.write(json.dumps(users))
+
+            self.manager.transition.direction = "left"
+            self.manager.current = 'signup_success_screen'
         except Exception as e:
             print(e)

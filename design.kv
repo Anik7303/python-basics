@@ -49,13 +49,14 @@
         cols: 1
         Label:
             id: message
-            test: ""
+            test: "Signup successful. Login to get quotes"
         Button:
             text: "Login"
             on_press: root.return_to_login()
 
 <LoginSuccessScreen>:
     GridLayout:
+        cols: 1
         Button:
             text: "logout"
             on_press: root.logout()
@@ -64,7 +65,7 @@
             hint_text: 'things to search fo: happy, sad, unloved, etc.'
         Button:
             text: "Enlighten Me"
-            on_press: root.search()
+            on_press: root.search(root.ids.feeling.text)
         Label:
             id: message
             text: ""
