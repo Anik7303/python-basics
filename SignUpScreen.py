@@ -31,3 +31,7 @@ class SignUpScreen(Screen):
             self.manager.current = 'signup_success_screen'
         except Exception as e:
             print(e)
+
+    def return_to_login(self):
+        self.manager.transition.direction = 'right'
+        self.manager.current = 'login_screen'
