@@ -11,6 +11,7 @@ class LoginSuccessScreen(Screen):
         self.manager.current = "login_screen"
 
     def search(self, phrase):
+        phrase = phrase.strip()
         available_feelings = [
             Path(feeling).stem for feeling in glob.glob('quotes/*.txt')]
         if phrase in available_feelings:

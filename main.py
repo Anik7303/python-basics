@@ -6,6 +6,7 @@ from LoginScreen import LoginScreen
 from SignUpScreen import SignUpScreen
 from LoginSuccessScreen import LoginSuccessScreen
 from SignUpSuccessScreen import SignUpSuccessScreen
+from ImageButton import ImageButton
 
 Builder.load_file('design.kv')
 

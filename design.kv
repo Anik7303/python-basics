@@ -5,8 +5,8 @@
         cols: 1
         GridLayout:
             cols: 1
-            padding: 15, 15
-            spacing: 15, 15
+            padding: 20, 20
+            spacing: 20, 20
             Label:
                 text: "User Login"
                 font_size: '20sp'
@@ -40,7 +40,7 @@
             Button:
                 background_color: 1, 1, 1, 0
                 opacity: 1 if self.state == 'normal' else .5
-                color: 0, 0, 1, 1
+                color: 0, 1, 1, 1
                 text: "Sign Up"
                 on_press: root.redirect_to_signup()
 
@@ -82,18 +82,30 @@
 <LoginSuccessScreen>:
     GridLayout:
         cols: 1
-        Button:
-            text: "logout"
-            on_press: root.logout()
+        padding: 20, 20
+        spacing: 20, 20
+        RelativeLayout:
+            ImageButton:
+                source: 'images/logout_hover.png' if self.hovered else 'images/logout.png'
+                on_press: root.logout()
+                size_hint: .3, .3
+                pos_hint: { 'center_x': .93, 'center_y': 0.8 }
+        Label:
+            text: "How do you feel?"
         TextInput:
             id: feeling
             hint_text: 'things to search fo: happy, sad, unloved, etc.'
         Button:
             text: "Enlighten Me"
             on_press: root.search(root.ids.feeling.text)
-        Label:
-            id: message
-            text: ""
+        ScrollView:
+            Label:
+                id: message
+                text: ""
+                text_size: self.width, None
+                # size_hint: 1, None
+                size_hint_y: None
+                height: self.texture_size[1]
 
 <RootWidget>:
     LoginScreen:
